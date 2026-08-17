@@ -12,7 +12,7 @@
   elements:
   - title: Top Items This Month
     name: Top Items This Month
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_bar
     fields: [products.name, order_items.count]
@@ -103,7 +103,7 @@
     tab_name: ''
   - title: sales by location
     name: sales by location
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_line
     fields: [order_items.total_sales, orders.created_date, distribution_centers.name]
@@ -193,7 +193,7 @@
     tab_name: ''
   - title: Orders Volume Trends
     name: Orders Volume Trends
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_line
     fields: [orders.created_date, orders.sum_num_of_orders, orders.count_of_orders]
@@ -285,7 +285,7 @@
     tab_name: ''
   - title: Delivery times by Location
     name: Delivery times by Location
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_column
     fields: [orders.average_delivery_days, distribution_centers.name, orders.created_week]

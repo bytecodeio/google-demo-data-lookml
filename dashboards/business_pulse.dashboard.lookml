@@ -7,7 +7,7 @@
   elements:
   - title: Business Pulse 20
     name: Business Pulse 20
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: users
     type: single_value
     fields: [users.count]
@@ -41,7 +41,7 @@
     height: 4
   - title: Average Sales per Item
     name: Average Sales per Item
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: single_value
     fields: [order_items.average_sale_price]
@@ -65,7 +65,7 @@
     height: 4
   - title: Percent of Repeat Customers
     name: Percent of Repeat Customers
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: single_value
     fields: [user_order_information.percent_of_repeat_customers]
@@ -93,7 +93,7 @@
     height: 4
   - title: Total Sales YoY
     name: Total Sales YoY
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_line
     fields: [order_items.created_year, order_items.total_sales, order_items.created_month_name]
@@ -146,7 +146,7 @@
     height: 11
   - title: Orders per Day and Category
     name: Orders per Day and Category
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_area
     fields: [order_items.count_all_orders, order_items.created_date, products.category]
@@ -191,7 +191,7 @@
     height: 7
   - title: Gender Profile
     name: Gender Profile
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_donut_multiples
     fields: [order_items.count_all_orders, users.gender, users.traffic_source]
@@ -210,7 +210,7 @@
     height: 8
   - title: Age Profile
     name: Age Profile
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_donut_multiples
     fields: [users.age_tiers, order_items.count_all_orders]
@@ -236,7 +236,7 @@
     height: 8
   - title: Session KPI
     name: Session KPI
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: events
     type: single_value
     fields: [events.count_unique_sessions, events.purchase_conversion]
@@ -288,7 +288,7 @@
     height: 4
   - title: Website Page Funnel
     name: Website Page Funnel
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: events
     type: looker_funnel
     fields: [events.number_of_product_pages, events.number_of_cart_pages, events.number_of_purchases]
@@ -326,7 +326,7 @@
     height: 8
   - title: Abandon Cart Rate
     name: Abandon Cart Rate
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: events
     type: single_value
     fields: [abandoned_cart_info.abandoned_cart_rate]
@@ -355,7 +355,7 @@
     height: 4
   - title: Traffic Source Boxplot
     name: Traffic Source Boxplot
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: users
     type: looker_boxplot
     fields: [users.traffic_source, user_order_information.min_lifetime_sales, user_order_information.25th_percentile_lifetime_sales,
@@ -400,7 +400,7 @@
     height: 6
   - title: Traffic Source Sankey
     name: Traffic Source Sankey
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: events
     type: marketplace_viz_sankey::sankey-marketplace
     fields: [events.traffic_source, events.event_type, events.count_unique_sessions]
@@ -446,7 +446,7 @@
     height: 6
   - title: Brand Performance
     name: Brand Performance
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_grid
     fields: [products.brand, user_order_information.percent_of_repeat_customers, products.gross_margin,
@@ -477,7 +477,7 @@
     height: 12
   - title: Brand Roll-up
     name: Brand Roll-up
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_grid
     fields: [products.brand, products.category, order_items.total_sales]
@@ -555,7 +555,7 @@
     height: 2
   - title: Total Revenue by Country
     name: Total Revenue by Country
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_google_map
     fields: [users.country, order_items.total_sales]

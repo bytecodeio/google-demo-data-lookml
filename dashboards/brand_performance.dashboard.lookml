@@ -9,7 +9,7 @@
   elements:
   - title: Total Customers
     name: Total Customers
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: single_value
     fields: [products.brand, users.count]
@@ -85,7 +85,7 @@
     height: 2
   - title: Total Orders
     name: Total Orders
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: single_value
     fields: [products.brand, order_items.reporting_period, orders.count]
@@ -154,7 +154,7 @@
     height: 4
   - title: Most Popular Categories
     name: Most Popular Categories
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_column
     fields: [order_items.total_sales, products.category, products.department]
@@ -205,7 +205,7 @@
     height: 11
   - title: Sales Trendline
     name: Sales Trendline
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_line
     fields: [order_items.total_sales, order_items.created_year, order_items.created_day_of_year]
@@ -263,7 +263,7 @@
     height: 7
   - title: Average Order Value
     name: Average Order Value
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: single_value
     fields: [order_items.average_sale_price]
@@ -298,7 +298,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     listens_to_filters: []
     field: products.brand
@@ -312,7 +312,7 @@
       type: relative_timeframes
       display: inline
       options: []
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     listens_to_filters: []
     field: order_items.created_date
@@ -325,7 +325,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     listens_to_filters: []
     field: users.country
@@ -338,7 +338,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     listens_to_filters: []
     field: users.state
