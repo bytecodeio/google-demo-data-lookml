@@ -1,5 +1,5 @@
 view: orders {
-  sql_table_name: `rana-synthetic-data.rana_04_anomalies.orders` ;;
+  sql_table_name: `rana-synthetic-data.demo_data.orders` ;;
 
   dimension: order_id {
     primary_key: yes
@@ -45,7 +45,7 @@ view: orders {
     hidden: yes
     label: "Count Orders"
     type: count
-    drill_fields: [order_id, created_date, delivered_date,status, sers.first_and_last_name,gender, users.city,ussers.state, users.country, num_of_item]
+    drill_fields: [order_id, created_date, delivered_date,status, users.first_and_last_name,gender, users.city,users.state, users.country, num_of_item]
   }
   measure: count_of_customers {
     sql: ${user_id} ;;

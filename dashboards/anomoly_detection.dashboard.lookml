@@ -3,7 +3,7 @@
   title: 'Anomoly Detection'
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: 5cO6nQ5loWtxWRRsAylPCd
+  preferred_slug: 1Jrsucus8w6Evwq1VDHN4O
   theme_name: ''
   layout: newspaper
   tabs:
@@ -12,7 +12,7 @@
   elements:
   - title: Top Items This Month
     name: Top Items This Month
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_bar
     fields: [products.name, order_items.count]
@@ -103,7 +103,7 @@
     tab_name: ''
   - title: sales by location
     name: sales by location
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_line
     fields: [order_items.total_sales, orders.created_date, distribution_centers.name]
@@ -119,7 +119,7 @@
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
     show_x_axis_label: true
-    show_x_axis_ticks: true
+    show_x_axis_ticks: false
     y_axis_scale_mode: linear
     x_axis_reversed: false
     y_axis_reversed: false
@@ -186,14 +186,14 @@
     hidden_pivots: {}
     defaults_version: 1
     listen: {}
-    row: 6
-    col: 12
+    row: 12
+    col: 0
     width: 12
     height: 6
     tab_name: ''
   - title: Orders Volume Trends
     name: Orders Volume Trends
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_line
     fields: [orders.created_date, orders.sum_num_of_orders, orders.count_of_orders]
@@ -285,7 +285,7 @@
     tab_name: ''
   - title: Delivery times by Location
     name: Delivery times by Location
-    model: ecommerce_order_items
+    model: google_synthetic_data
     explore: order_items
     type: looker_column
     fields: [orders.average_delivery_days, distribution_centers.name, orders.created_week]
@@ -371,8 +371,8 @@
     hidden_pivots: {}
     defaults_version: 1
     listen: {}
-    row: 12
-    col: 0
+    row: 6
+    col: 12
     width: 12
     height: 6
     tab_name: ''
