@@ -1,5 +1,5 @@
 view: orders {
-  sql_table_name: `rana-synthetic-data.rana_04_anomalies.orders` ;;
+  sql_table_name: `rana-synthetic-data.demo_data.orders` ;;
 
   dimension: order_id {
     primary_key: yes

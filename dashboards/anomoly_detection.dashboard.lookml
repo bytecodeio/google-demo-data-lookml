@@ -3,7 +3,7 @@
   title: 'Anomoly Detection'
   preferred_viewer: dashboards-next
   description: ''
-  preferred_slug: 5cO6nQ5loWtxWRRsAylPCd
+  preferred_slug: 1Jrsucus8w6Evwq1VDHN4O
   theme_name: ''
   layout: newspaper
   tabs:
@@ -119,7 +119,7 @@
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
     show_x_axis_label: true
-    show_x_axis_ticks: true
+    show_x_axis_ticks: false
     y_axis_scale_mode: linear
     x_axis_reversed: false
     y_axis_reversed: false
@@ -186,8 +186,8 @@
     hidden_pivots: {}
     defaults_version: 1
     listen: {}
-    row: 6
-    col: 12
+    row: 12
+    col: 0
     width: 12
     height: 6
     tab_name: ''
@@ -371,8 +371,8 @@
     hidden_pivots: {}
     defaults_version: 1
     listen: {}
-    row: 12
-    col: 0
+    row: 6
+    col: 12
     width: 12
     height: 6
     tab_name: ''

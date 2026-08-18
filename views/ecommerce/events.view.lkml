@@ -1,5 +1,5 @@
 view: events {
-  sql_table_name: `rana-synthetic-data.rana_04_anomalies.events` ;;
+  sql_table_name: `rana-synthetic-data.demo_data.events` ;;
 
   dimension: id {
     primary_key: yes

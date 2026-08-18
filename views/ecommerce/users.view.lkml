@@ -1,6 +1,6 @@
 ### Information on all prospects whose signed-up
 view: users {
-  sql_table_name: `rana-synthetic-data.rana_04_anomalies.users` ;;
+  sql_table_name: `rana-synthetic-data.demo_data.users` ;;
 
   dimension: id {
     label: "User ID"
