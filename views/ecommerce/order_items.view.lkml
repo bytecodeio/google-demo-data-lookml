@@ -84,13 +84,14 @@ view: order_items {
 
   parameter: date_selector {
     view_label: "POP Fields"
+    hidden: yes
     type: date
     description: "Date selector enables an end user to select any date on a calendar format. Use this parameter to manipulate the count of items on the date,
     month to date, quarter to date, and life to date"
   }
   dimension: is_created_on_date {
     view_label: "POP Fields"
-
+    hidden: yes
     description: "This dimension returns yes if the item's sale date equals the date in the date selector parameter."
     type: yesno
 
@@ -98,7 +99,7 @@ view: order_items {
   }
   dimension: is_created_mtd {
     view_label: "POP Fields"
-
+    hidden: yes
     description: "This dimension returns yes if the item's sale date is between the first day of the month, in the date selected, and the date selected."
     type: yesno
 
@@ -106,7 +107,7 @@ view: order_items {
   }
   dimension: is_created_qtd {
     view_label: "POP Fields"
-
+    hidden: yes
     description: "This dimension returns yes if the item's sale date is between the first day of the quarter, in the date selected, and the date selected."
     type: yesno
 
@@ -114,7 +115,7 @@ view: order_items {
   }
   dimension: is_created_ltd{
     view_label: "POP Fields"
-
+    hidden: yes
     description: "This dimension returns yes if the item's sale date is before and equal to the date selected"
     type: yesno
 
@@ -122,7 +123,7 @@ view: order_items {
   }
   measure: count_items_on_date {
     view_label: "POP Fields"
-
+    hidden: yes
     label: "Count items on date"
     description: "This measure returns the count of items sold on the date selected by the date selector"
     type: count
@@ -130,7 +131,7 @@ view: order_items {
   }
   measure: count_items_mtd {
     view_label: "POP Fields"
-
+    hidden: yes
     label: "Count items Month to date"
     description: "This measure returns the count of items sold month to date on the date of the date selector."
     type: count
@@ -138,7 +139,7 @@ view: order_items {
   }
   measure: count_items_qtd {
     view_label: "POP Fields"
-
+    hidden: yes
     label: "Count items Quarter to date"
     description: "This measure returns the count of items sold quarter to date on the date of the date selector."
     type: count
@@ -146,7 +147,7 @@ view: order_items {
   }
   measure: count_items_ltd {
     view_label: "POP Fields"
-
+    hidden: yes
     label: "Count items Life to date"
     description: "This measure returns the count of all items sold before and equal to the date of the date selector"
     type: count
@@ -157,7 +158,7 @@ view: order_items {
   # Solution: end users can use the date parameter to choose a date, which creates this ytd and last ytd on the date they've selected
   dimension: is_created_this_ytd {
     view_label: "POP Fields"
-
+    hidden: yes
     description: "This dimension returns yes if the item's sale date is between the first day of the year, in the date selected, and the date selected."
     type: yesno
 
@@ -165,7 +166,7 @@ view: order_items {
   }
   dimension: is_created_last_ytd {
     view_label: "POP Fields"
-
+    hidden: yes
     description: "This dimension returns yes if the item's sale date is between the first day of last year, in the date selected, and last year's date of the date selected"
     type: yesno
 
@@ -176,6 +177,7 @@ view: order_items {
 
   measure: total_final_sale_this_ytd{
     view_label: "POP Fields"
+    hidden: yes
     label: "Sales This YTD"
     description: "Sums the sale price of all items past their return date, not returned, and is in the YTD of the date selected"
     type: sum
@@ -185,6 +187,7 @@ view: order_items {
   }
   measure: total_final_sale_last_ytd{
     view_label: "POP Fields"
+    hidden: yes
     label: "Sales Last YTD"
     description: "Sums the sale price of all items past their return date, not returned, and is in the last YTD of the date selected"
     type: sum
@@ -195,6 +198,7 @@ view: order_items {
   }
   measure: percent_change_yoy {
     view_label: "POP Fields"
+    hidden: yes
     label: "% Change YOY"
     description: "Returns the percentage increase or decrease of sales from last YTD based on the date selected"
     type: number
@@ -327,6 +331,7 @@ view: order_items {
 
   parameter: dynamic_count_field {
     group_label: "Count Fields"
+    hidden: yes
     type: unquoted
     allowed_value: {
       label: "Count"
@@ -345,6 +350,7 @@ view: order_items {
   measure: dynamic_count_measure {
     label_from_parameter: dynamic_count_field
     group_label: "Count Fields"
+    hidden: yes
     type: number
     sql:
       {% if dynamic_count_field._parameter_value == "count" %} ${count}
@@ -390,7 +396,7 @@ view: order_items {
 
 # POP analysis {
   parameter: select_timeframe {
-
+    hidden: yes
     type: unquoted
     default_value: "month"
     allowed_value: {
@@ -414,13 +420,14 @@ view: order_items {
 
   parameter: select_reference_date {
     type: date
-
+    hidden: yes
     convert_tz: no
   }
 
 
   dimension_group: current_timestamp {
-
+    hidden: yes
+    description: "The time the query was run, not a business date. Used internally by the POP analysis fields below; never a filter or answer on its own."
     type: time
     datatype: date
     timeframes: [raw,date,hour_of_day,day_of_week_index,day_of_month,day_of_year]
@@ -429,7 +436,7 @@ view: order_items {
   }
 
   dimension: current_vs_previous_period_bigquery {
-
+    hidden: yes
     label: "Current_vs_Previous_Period"
     description: "Use this dimension along with \"Select Timeframe\" Filter"
     type: string
@@ -445,7 +452,7 @@ view: order_items {
   }
 
   dimension: selected_dynamic_day_of  {
-
+    hidden: yes
     label: "{%
     if select_timeframe._is_filtered and select_timeframe._parameter_value == 'month' %}Day of Month{%
     elsif select_timeframe._is_filtered and select_timeframe._parameter_value == 'week' %}Day of Week{%
@@ -470,7 +477,7 @@ view: order_items {
 
   dimension: selected_dynamic_day_of_sort  {
     type: number
-
+    hidden: yes
     sql:
     {% if select_timeframe._parameter_value == 'day' %}
       ${created_hour_of_day}
@@ -485,6 +492,7 @@ view: order_items {
   }
 
   dimension: selected_dynamic_date {
+    hidden: yes
     sql:
     {% if select_timeframe._parameter_value == 'day' %}
       ${created_date}
@@ -501,15 +509,12 @@ view: order_items {
 
   parameter: apply_to_date_filter {
     type: yesno
-
+    hidden: yes
     default_value: "false"
   }
 
-
-
   dimension: is_to_date {
-
-
+    hidden: yes
     type: yesno
     sql:
       {% if apply_to_date_filter._parameter_value == 'true' %}
@@ -552,6 +557,7 @@ view: order_items {
   }
   dimension: reporting_period {
     group_label: "Order Date"
+    description: "Buckets order items into 'This Year to Date' or 'Last Year to Date' relative to the current date, for year-over-year comparisons as of today. Rows outside both windows are excluded (null)."
     sql: CASE
               WHEN EXTRACT(YEAR from ${created_raw}) = EXTRACT(YEAR from CURRENT_TIMESTAMP())
                    AND ${created_raw} < CURRENT_TIMESTAMP()
@@ -567,7 +573,13 @@ view: order_items {
     sql: ${total_sales} ;;
     value_format_name: usd
   }
-  set: eccomerce_order_items {
+  # Vetted, unambiguous subset of order_items fields for conversational/AI
+  # exploration -- excludes the parameter-driven POP/demo fields above.
+  # Not currently wired into the explore's `fields:` (doing so would drop
+  # fields the dashboards rely on, e.g. reporting_period, created_year,
+  # created_month_name); reference this set when scoping an AI-specific
+  # explore instead.
+  set: ecommerce_order_items {
     fields: [product_id, inventory_item_id, id, order_id, user_id, created_date,returned_date,shipped_date,delivered_date,
       total_sales,status,sale_price,is_returned,count,count_all_orders,is_cancelled, is_complete,average_sale_price
     ]

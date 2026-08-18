@@ -12,7 +12,7 @@ view: parameter_subquery_demo {
     }
   }
   dimension: dynamic_user_attributes {
-    description: ""
+    description: "The user attribute currently selected by the users.user_attributes_parameter (country, city, gender, age tier, or traffic source). Demo of parameter-driven subqueries; not a business field."
   }
   dimension: total_sales {
     description: "Sum of all item's sale price"
@@ -20,7 +20,7 @@ view: parameter_subquery_demo {
     type: number
   }
   dimension: count {
-    description: ""
+    description: "Count of order item rows"
     type: number
   }
 }

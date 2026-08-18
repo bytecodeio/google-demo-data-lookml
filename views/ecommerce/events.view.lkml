@@ -9,7 +9,7 @@ view: events {
   dimension: viewed_product_id {
     label: "Product ID"
     description: "The product ID of the product a vistior is viewing"
-    type: string
+    type: number
     sql: cast(if(${event_type} = "product", substr(${uri},10), null) as numeric) ;;
   }
   measure: count {

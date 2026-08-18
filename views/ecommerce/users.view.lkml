@@ -51,7 +51,8 @@ view: users {
   dimension: user_location {
     group_label: "Locations"
     label: "User_Location"
-    description: "The latitude and longitude of a user.  use with map viz only.  use on geographical questions about users"
+    hidden: yes
+    description: "The latitude and longitude of a user. Redacted at publish -- always null. Do not use."
     type: location
     sql_latitude: ${latitude};;
     sql_longitude: ${longitude} ;;
@@ -64,7 +65,7 @@ view: users {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
-    drill_fields: [state, city, postal_code, gender,products.brand, products.category]
+    drill_fields: [state, city, gender,products.brand, products.category]
   }
   dimension: city {
     group_label: "Locations"
@@ -73,21 +74,22 @@ view: users {
     tags: ["Location"]
     type: string
     sql: ${TABLE}.city ;;
-    drill_fields: [gender,products.brand, postal_code]
+    drill_fields: [gender,products.brand]
   }
   dimension: postal_code {
     group_label: "Locations"
     label: "Postal Code"
-    description: "User's postal code"
+    hidden: yes
+    description: "User's postal code. Redacted at publish -- always null. Do not use."
     type: string
     sql: ${TABLE}.postal_code ;;
-    drill_fields: [gender,products.brand, street_address]
   }
   dimension: street_address {
     group_label: "Locations"
     label: "Street Address"
     tags: ["Location"]
-    description: "User's street address"
+    hidden: yes
+    description: "User's street address. Redacted at publish -- always null. Do not use."
     type: string
     sql: ${TABLE}.street_address ;;
   }
@@ -225,7 +227,7 @@ view: users {
   # }
 
   set: geographical_drill_set{
-    fields: [city,postal_code,user_location]
+    fields: [city,state,country]
   }
 
   set: time_drill_set{

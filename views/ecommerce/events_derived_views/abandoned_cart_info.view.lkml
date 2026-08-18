@@ -13,7 +13,7 @@ view: abandoned_cart_info {
   dimension: id {
     primary_key: yes
     hidden: yes
-    description: ""
+    description: "Row identifier inherited from the events table this row was derived from"
     type: number
   }
   dimension: following_event_type {
