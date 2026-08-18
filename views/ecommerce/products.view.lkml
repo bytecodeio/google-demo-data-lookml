@@ -39,6 +39,7 @@ view: products {
     description: "Name of the product.  There are many products to a brand."
     tags: ["item"]
     type: string
+    case_sensitive: no
     sql: ${TABLE}.name ;;
     link: {
       label: "Product Dashboard - {{ value }}"

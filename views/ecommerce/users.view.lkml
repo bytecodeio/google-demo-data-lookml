@@ -73,6 +73,7 @@ view: users {
     description: "City of user, customers, client.  Use in map or table viz only.Geographical info"
     tags: ["Location"]
     type: string
+    case_sensitive: no
     sql: ${TABLE}.city ;;
     drill_fields: [gender,products.brand]
   }
@@ -161,11 +162,13 @@ view: users {
   dimension: first_name {
     type: string
     hidden: yes
+    case_sensitive: no
     sql: ${TABLE}.first_name ;;
   }
   dimension: last_name {
     type: string
     hidden: yes
+    case_sensitive: no
     sql: ${TABLE}.last_name ;;
   }
   dimension: latitude {
@@ -183,6 +186,7 @@ view: users {
     description: "Full name of a user.  Include this field in questions about a specific customer.  Only use this field in a table viz"
     type: string
     # hidden: yes
+    case_sensitive: no
     sql: concat( ${first_name}," ", ${last_name}) ;;
     action:  {
       label: "Send User Gift Certificate"

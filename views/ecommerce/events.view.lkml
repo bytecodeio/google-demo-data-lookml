@@ -45,6 +45,7 @@ view: events {
   dimension: uri {
     description: "The actions taken in a website page/event type"
     type: string
+    case_sensitive: no
     sql: ${TABLE}.uri ;;
   }
   dimension: user_id {
